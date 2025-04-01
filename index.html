@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cardápio Digital</h1>
+
+    <!-- Campo de pesquisa -->
+    <input type="text" id="search" placeholder="Pesquisar por pizza..." />
+
+    <!-- Exibição dos itens do cardápio -->
+    <div id="cardapio" class="cardapio"></div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+
+  <!-- Seu script.js -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
