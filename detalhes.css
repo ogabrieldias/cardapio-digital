@@ -9,6 +9,26 @@ body {
     position: relative; /* Necessário para o ícone do carrinho ser posicionado */
   }
   
+/* Botão voltar ao cardápio */
+.voltar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.voltar:hover {
+  background-color: #2ecc71;
+}
 
   
 /* Estilos do container e detalhes (não alterados) */
@@ -97,10 +117,11 @@ button:hover, a:hover {
 /* Ícone de carrinho no canto superior direito */
 .carrinho-icon {
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 10px;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
   background-color: #27ae60;
   color: white;
   border-radius: 50%;
@@ -114,9 +135,38 @@ button:hover, a:hover {
 }
   
 .carrinho-icon i {
-  font-size: 14px;
+  font-size: 27px;
+  
 }
 
 .carrinho-icon:hover {
+  background-color: #2ecc71;
+}
+
+.seta-icon {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+  
+.seta-icon i {
+  font-size: 27px;
+  
+}
+
+.seta-icon:hover {
   background-color: #2ecc71;
 }

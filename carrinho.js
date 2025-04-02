@@ -28,7 +28,9 @@ function renderizarCarrinho() {
           <span>${item.quantidade}</span>
           <button class="aumentar" data-index="${index}">+</button>
         </div>
-        <button class="remover" data-index="${index}">Remover</button>
+        <button class="remover" data-index="${index}">
+          <i class="fa-solid fa-trash"></i>
+        </button>
       </div>
     `;
     carrinhoContainer.appendChild(itemElement);

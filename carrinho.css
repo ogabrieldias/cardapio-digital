@@ -16,6 +16,50 @@ body {
     min-height: 100vh;
 }
 
+/* Botão voltar ao cardápio */
+.voltar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.voltar:hover {
+    background-color: #2ecc71;
+}
+
+/* Botões circulares de quantidade e remoção */
+.quantidade-btn,
+.remover {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantidade-btn:hover,
+.remover:hover {
+    background-color: #2ecc71;
+}
+
 .container {
     width: 100%;
     max-width: 900px;
@@ -32,6 +76,7 @@ h1 {
 
 #carrinho-itens {
     margin-top: 20px;
+    text-align: center;
 }
 
 .carrinho-item {
@@ -68,6 +113,7 @@ h1 {
 .carrinho-item .quantidade {
     font-size: 1.2em;
     color: #333;
+    padding: 1rem 1rem 1rem;
 }
 
 #total-carrinho {
