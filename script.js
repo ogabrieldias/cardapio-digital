@@ -15,28 +15,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Função para obter os produtos do Firestore e renderizar no HTML
+// Função para carregar o cardápio
 async function loadCardapio() {
   const querySnapshot = await getDocs(collection(db, "cardapio"));
   const cardapioContainer = document.getElementById("cardapio");
   const searchQuery = document.getElementById("search").value.toLowerCase();
 
-  cardapioContainer.innerHTML = ''; // Limpar cardápio para atualizações
+  cardapioContainer.innerHTML = '';
 
   querySnapshot.forEach((doc) => {
     const data = doc.data();
     const nome = data.nome.toLowerCase();
 
-    // Filtro de pesquisa
     if (nome.includes(searchQuery)) {
       const cardapioItem = document.createElement("div");
       cardapioItem.classList.add("cardapio-item");
 
       cardapioItem.innerHTML = `
-        <img src="${data.imagem}" alt="${data.nome}">
-        <h3>${data.nome}</h3>
-        <p>${data.descricao}</p>
-        <p class="preco">R$ ${data.preco}</p>
+        <a href="detalhes.html?id=${doc.id}">
+          <img src="${data.imagem}" alt="${data.nome}">
+          <h3>${data.nome}</h3>
+          <p>${data.descricao}</p>
+          <p class="preco">R$ ${data.preco}</p>
+        </a>
       `;
 
       cardapioContainer.appendChild(cardapioItem);
@@ -46,6 +47,4 @@ async function loadCardapio() {
 
 // Filtro de pesquisa
 document.getElementById("search").addEventListener("input", loadCardapio);
-
-// Carregar o cardápio ao iniciar a página
 window.onload = loadCardapio;
