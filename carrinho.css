@@ -91,8 +91,8 @@ h1 {
 }
 
 .carrinho-item img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
 }
 
@@ -128,16 +128,41 @@ h1 {
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: #27ae60;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bold;
+    text-align: center;
+    align-items: center;
 }
 
 .btn:hover {
     background-color: #219150;
+}
+
+.menu-icon { 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-icon i { 
+    font-size: 30px;
 }

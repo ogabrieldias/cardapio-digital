@@ -20,22 +20,29 @@ function renderizarCarrinho() {
     itemElement.classList.add("carrinho-item");
     itemElement.innerHTML = `
       <img src="${item.imagem}" alt="${item.nome}" class="item-img">
-      <div class="item-info">
+      <div class="descricao">
         <h3>${item.nome}</h3>
         <p>Preço: R$ ${item.preco.toFixed(2)}</p>
-        <div class="quantidade">
-          <button class="diminuir" data-index="${index}">-</button>
-          <span>${item.quantidade}</span>
-          <button class="aumentar" data-index="${index}">+</button>
-        </div>
-        <button class="remover" data-index="${index}">
-          <i class="fa-solid fa-trash"></i>
-        </button>
       </div>
+      <div class="quantidade">
+      
+        <button class="quantidade-btn aumentar" data-index="${index}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <span>${item.quantidade}</span>
+        <button class="quantidade-btn diminuir" data-index="${index}">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        
+      </div>
+      <button class="remover" data-index="${index}">
+        <i class="fa-solid fa-trash"></i>
+      </button>
     `;
     carrinhoContainer.appendChild(itemElement);
     total += item.preco * item.quantidade;
-  });
+});
+
 
   totalElement.textContent = `R$ ${total.toFixed(2)}`;
 
