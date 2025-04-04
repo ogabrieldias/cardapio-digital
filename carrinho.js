@@ -25,7 +25,6 @@ function renderizarCarrinho() {
         <p>Preço: R$ ${item.preco.toFixed(2)}</p>
       </div>
       <div class="quantidade">
-      
         <button class="quantidade-btn aumentar" data-index="${index}">
           <i class="fa-solid fa-plus"></i>
         </button>
@@ -33,7 +32,6 @@ function renderizarCarrinho() {
         <button class="quantidade-btn diminuir" data-index="${index}">
           <i class="fa-solid fa-minus"></i>
         </button>
-        
       </div>
       <button class="remover" data-index="${index}">
         <i class="fa-solid fa-trash"></i>
@@ -41,37 +39,48 @@ function renderizarCarrinho() {
     `;
     carrinhoContainer.appendChild(itemElement);
     total += item.preco * item.quantidade;
-});
-
+  });
 
   totalElement.textContent = `R$ ${total.toFixed(2)}`;
 
   // Adicionar eventos para os botões
   document.querySelectorAll(".aumentar").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const index = e.target.dataset.index;
-      carrinho[index].quantidade += 1;
-      salvarCarrinho();
+      const index = e.target.closest("button").dataset.index;
+      if (carrinho[index]) {
+        carrinho[index].quantidade += 1;
+        salvarCarrinho();
+      } else {
+        console.error("Item não encontrado no carrinho para aumentar a quantidade.");
+      }
     });
   });
 
   document.querySelectorAll(".diminuir").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const index = e.target.dataset.index;
-      if (carrinho[index].quantidade > 1) {
-        carrinho[index].quantidade -= 1;
+      const index = e.target.closest("button").dataset.index;
+      if (carrinho[index]) {
+        if (carrinho[index].quantidade > 1) {
+          carrinho[index].quantidade -= 1;
+        } else {
+          carrinho.splice(index, 1);
+        }
+        salvarCarrinho();
       } else {
-        carrinho.splice(index, 1);
+        console.error("Item não encontrado no carrinho para diminuir a quantidade.");
       }
-      salvarCarrinho();
     });
   });
 
   document.querySelectorAll(".remover").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const index = e.target.dataset.index;
-      carrinho.splice(index, 1);
-      salvarCarrinho();
+      const index = e.target.closest("button").dataset.index;
+      if (carrinho[index]) {
+        carrinho.splice(index, 1);
+        salvarCarrinho();
+      } else {
+        console.error("Item não encontrado no carrinho para remover.");
+      }
     });
   });
 }

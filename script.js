@@ -28,16 +28,17 @@ async function loadCardapio() {
     const nome = data.nome.toLowerCase();
 
     if (nome.includes(searchQuery)) {
-      const cardapioItem = document.createElement("div");
+      const cardapioItem = document.createElement("a");
       cardapioItem.classList.add("cardapio-item");
+      cardapioItem.href = `detalhes.html?id=${doc.id}`; // Link para a página de detalhes
 
       cardapioItem.innerHTML = `
-        <a href="detalhes.html?id=${doc.id}">
-          <img src="${data.imagem}" alt="${data.nome}">
+        <img src="${data.imagem}" alt="${data.nome}">
+        <div class="info">
           <h3>${data.nome}</h3>
           <p>${data.descricao}</p>
           <p class="preco">R$ ${data.preco}</p>
-        </a>
+        </div>
       `;
 
       cardapioContainer.appendChild(cardapioItem);
