@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalizar Pedido</title>
+  <link rel="stylesheet" href="/css/checkout.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <h1>Finalizar Pedido</h1>
+
+    <div class="resumo-pedido">
+      <h2>Resumo do Pedido</h2>
+      <div id="itens-pedido">
+        <!-- Itens do carrinho inseridos via JS -->
+      </div>
+      <div class="total">
+        <strong>Total:</strong> R$ <span id="valor-total">0,00</span>
+      </div>
+    </div>
+
+    <div class="pagamento">
+      <h2>Pagamento</h2>
+      <p>Use um cartão de teste da Stripe para simular o pagamento:</p>
+      <ul class="cartao-teste">
+        <li>Número: <strong>4242 4242 4242 4242</strong></li>
+        <li>Validade: qualquer futura (ex: <strong>12/34</strong>)</li>
+        <li>CVC: qualquer (ex: <strong>123</strong>)</li>
+      </ul>
+      <button id="finalizar-pedido">Pagar com cartão</button>
+    </div>
+
+    <a href="index.html" class="voltar"><i class="fa fa-arrow-left"></i> Voltar ao Cardápio</a>
+  </div>
+
+  <script type="module" src="/js/checkout.js"></script>
+</body>
+</html>
