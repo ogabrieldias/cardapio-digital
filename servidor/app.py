@@ -39,8 +39,8 @@ def create_checkout_session():
             payment_method_types=["card"],  # Ou inclua "pix" para permitir Pix também
             line_items=line_items,
             mode="payment",
-            success_url="http://localhost:5500/sucesso.html",  # Página de sucesso
-            cancel_url="http://localhost:5500/checkout.html",  # Página de erro ou cancelamento
+            success_url="https://cardapio-digital-production.up.railway.app/sucesso.html",  # Página de sucesso
+            cancel_url="https://cardapio-digital-production.up.railway.app/checkout.html",  # Página de erro ou cancelamento
         )
         return jsonify({"id": session.id})
     except Exception as e:
