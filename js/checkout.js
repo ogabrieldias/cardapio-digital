@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (botaoFinalizar) {
     botaoFinalizar.addEventListener("click", async () => {
-      const response = await fetch("http://localhost:4242/create-checkout-session", {
+      const response = await fetch('http://192.168.1.4:4242/create-checkout-session', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ carrinho, total }),
