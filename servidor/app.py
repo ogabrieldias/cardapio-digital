@@ -8,15 +8,25 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Libera acesso CORS para o frontend
 
-# Chave secreta da API do Stripe
+# Libera CORS para todos os domínios ou define seu domínio do GitHub Pages
+CORS(app, resources={r"/*": {"origins": "*"}})  # Para desenvolvimento
+# CORS(app, resources={r"/*": {"origins": "https://ogabrieldias.github.io"}})  # Produção segura
+
+# Chave secreta do Stripe
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
+# ✅ Rota raiz para teste
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "Servidor do cardápio digital está online 🚀"})
+
+# ✅ Rota de criação da sessão de pagamento
 @app.route("/create-checkout-session", methods=["POST"])
 def create_checkout_session():
     data = request.json
     carrinho = data.get("carrinho", [])
+    total = data.get("total", 0)
 
     if not carrinho:
         return jsonify({"error": "Carrinho vazio"}), 400
@@ -36,16 +46,15 @@ def create_checkout_session():
 
     try:
         session = stripe.checkout.Session.create(
-            payment_method_types=["card"],  # Ou inclua "pix" para permitir Pix também
+            payment_method_types=["card"],  # Pode adicionar "pix" se quiser
             line_items=line_items,
             mode="payment",
-            success_url="https://cardapio-digital-production.up.railway.app/sucesso.html",  # Página de sucesso
-            cancel_url="https://cardapio-digital-production.up.railway.app/checkout.html",  # Página de erro ou cancelamento
+            success_url="https://ogabrieldias.github.io/cardapio-digital/html/sucesso.html",
+            cancel_url="https://ogabrieldias.github.io/cardapio-digital/html/checkout.html",
         )
         return jsonify({"id": session.id})
     except Exception as e:
-        return jsonify(error=str(e)), 500
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=4242)
-
