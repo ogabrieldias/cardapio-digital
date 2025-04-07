@@ -117,14 +117,13 @@ h1 {
     left: 10px;
     width: 60px;
     height: 60px;
-    background-color: white;
-    color: var(--bg-color-dark);
+    
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    box-shadow: 0 9px 16px rgba(0, 0, 0, 0.582);
+    
     text-decoration: none;
     transition: background-color 0.3s ease;
 }

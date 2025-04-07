@@ -5,6 +5,11 @@
   --text-color-dark: #ffffff;
 }
 
+:root {
+  --cart-color-light: #000000;
+  --cart-color-dark: #ffffff;
+}
+
 body {
   background-color: var(--bg-color-light);
   color: var(--text-color-light);
@@ -62,6 +67,35 @@ body.dark-mode #menu-icon {
   cursor: pointer;
   display: none;
   z-index: 1001;
+}
+
+.carrinho-icon i {
+  font-size: 1.8rem;
+  color: var(--cart-color-light);
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  transition: color 0.3s;
+}
+
+/* Quando estiver em dark mode */
+body.dark-mode .carrinho-icon i {
+  color: var(--cart-color-dark);
+}
+
+.fixed-icon {
+  font-size: 1.8rem !important;
+  width: 2.2rem !important;
+  height: 2.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: fixed !important;
+  top: 1rem !important;
+  z-index: 1000 !important;
+  transition: color 0.3s !important;
+  cursor: pointer !important;
 }
 
 /* Menu lateral fixo */
