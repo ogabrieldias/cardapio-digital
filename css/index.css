@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,14 +20,14 @@ body {
     width: 100%;
     max-width: 900px;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: black;
     margin-bottom: 1rem;
     padding: 4rem 0rem 0rem 0rem;
 }
@@ -55,7 +55,7 @@ h1 {
     justify-content: flex-start;
     text-align: center;
     padding: 15px;
-    background-color: #fafafa;
+    background-color: #ffffffd2;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none; /* Remove o sublinhado do link */
@@ -114,17 +114,17 @@ h1 {
 .carrinho-icon {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     width: 60px;
     height: 60px;
-    background-color: #27ae60;
-    color: white;
+    background-color: white;
+    color: var(--bg-color-dark);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 9px 16px rgba(0, 0, 0, 0.582);
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
@@ -134,36 +134,10 @@ h1 {
 }
   
 .carrinho-icon:hover {
-    background-color: #2ecc71;
+    background-color: #ffffff;
 }
   
-.menu-icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
-    height: 60px;
-    background-color: #27ae60;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.menu-icon i {
-    font-size: 30px;
-}
-
-.menu-icon:hover {
-    background-color: #2ecc71;
-}
-
-
+/* Responsividade */
 @media (max-width: 450px) {
     .cardapio {
         grid-template-columns: 1fr; /* Apenas 1 coluna em telas pequenas */

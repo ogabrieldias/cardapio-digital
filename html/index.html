@@ -4,12 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cardápio Digital</title>
-  <link rel="stylesheet" href="../css/index.css"> <!-- Ou o arquivo específico de estilos -->
+  <link rel="stylesheet" href="../css/style.css"> <!-- Arquivo padrão de estilos -->
+  <link rel="stylesheet" href="../css/index.css"> <!-- Arquivo específico de estilos -->
   <!-- Font Awesome para ícones -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
+  <header id="header">
+    
+    <div class="bx bx-moon" id="darkMode-icon"></div>
+    <div class="menu-toggle">
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+    
+    <nav class="mobile-nav" id="mobile-nav">
+      <ul>
+        <li><a href="index.html">Cardápio</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
   
   <div class="container">
     <h1>Cardápio Digital</h1>
@@ -20,10 +35,9 @@
   <a href="../html/carrinho.html" class="carrinho-icon">
     <i class="fas fa-shopping-cart"></i>
   </a>
-  <a href="../html/index.html" class="menu-icon">
-    <i class="fa-solid fa-bars"></i>
-  </a>
   
-  <script type="module" src="../js/script.js"></script>
+  
+  <script type="module" src="../js/index.js"></script> <!-- Arquivo específico de JavaScript -->
+  <script type="module" src="../js/script.js"></script> <!-- Arquivo padrão de JavaScript -->
 </body>
 </html>
