@@ -7,9 +7,26 @@
   <link rel="stylesheet" href="../css/style.css"> <!-- Arquivo padrão de estilos -->
   <link rel="stylesheet" href="../css/carrinho.css"> <!-- Arquivo específico de estilos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
+  <header id="header">
+    <!-- Ícone de carrinho -->
+    <div class="bx bx-moon fixed-icon" id="darkMode-icon"></div>
+    <a href="../html/carrinho.html" class="carrinho-icon fixed-icon">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+    <div class="menu-toggle">
+      <div class="bx bx-menu fixed-icon" id="menu-icon"></div>
+    </div> 
+    <nav class="mobile-nav" id="mobile-nav">
+      <ul>
+        <li><a href="index.html">Cardápio</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="container">
     <h1>Carrinho de Compras</h1>
     <div id="carrinho-itens"></div>
@@ -18,13 +35,8 @@
     </div>
     <a href="../html/checkout.html" id="finalizar-pedido" id="checkout-button" class="btn">Finalizar Compra</a>
   </div>
-
-  <!-- Ícone de menu -->
-  <a href="../html/index.html" class="menu-icon">
-    <i class="fa-solid fa-bars"></i>
-  </a>
-
-  <script type="module" src="../js/carrinho.js"></script>
+  <script type="module" src="../js/carrinho.js"></script> <!-- Arquivo específico de JavaScript -->
+  <script type="module" src="../js/script.js"></script> <!-- Arquivo padrão de JavaScript -->
 </body>
 </html>
 

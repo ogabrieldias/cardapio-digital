@@ -4,7 +4,7 @@
   --bg-color-dark: #a00000;
   --text-color-dark: #ffffff;
 }
-
+/* #540101 */
 :root {
   --cart-color-light: #000000;
   --cart-color-dark: #ffffff;
@@ -16,17 +16,24 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-#header {
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 7%;
-  background-color: transparent;
+  height: 60px; /* Altura do header */
+  background-color: var(--bg-color-light); /* Ou a cor desejada */
   display: flex;
   align-items: center;
-  z-index: 1;
-  transition: .5s;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  
+}
+
+body.dark-mode header {
+  background-color: var(--bg-color-dark);
 }
 
 body.dark-mode {
@@ -42,7 +49,7 @@ body.dark-mode {
   position: fixed;
   top: 1rem;
   z-index: 1001;
-  color: var(--text-color-light);
+  color: var(--text-color-light) !important;
   transition: color 0.3s;
 }
 
@@ -93,31 +100,38 @@ body.dark-mode .carrinho-icon i {
   justify-content: center !important;
   position: fixed !important;
   top: 1rem !important;
-  z-index: 1000 !important;
+
   transition: color 0.3s !important;
   cursor: pointer !important;
-}
+} 
 
 /* Menu lateral fixo */
 .mobile-nav {
   position: fixed;
-  top: 0;
+  top: 60px;
   right: -100%;
-  width: 200px;
-  height: 100%;
-  background: #111;
+  width: 100%;
+  height: 10%;
   color: white;
-  display: flex;
+  display: flex
+;
   flex-direction: column;
   justify-content: center;
   transition: right 0.3s ease;
   z-index: 1000;
+  align-items: center;
+  /* border: var(--bg-color-dark) 3px solid; */
+  backdrop-filter: blur(5px);
 }
 
 .mobile-nav ul {
   list-style: none;
   padding: 0;
   text-align: center;
+  display: inline-flex;
+  gap: 4rem;
+  align-items: center;
+  width: max-content;
 }
 
 .mobile-nav li {
@@ -125,7 +139,7 @@ body.dark-mode .carrinho-icon i {
 }
 
 .mobile-nav a {
-  color: white;
+  color: black;
   text-decoration: none;
   font-size: 1.2rem;
 }
