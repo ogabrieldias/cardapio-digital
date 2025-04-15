@@ -1,7 +1,7 @@
 :root {
   --bg-color-light: #ffffff;
   --text-color-light: #1a1a1a;
-  --bg-color-dark: #a00000;
+  --bg-color-dark: #222831;
   --text-color-dark: #ffffff;
 }
 /* #540101 */
@@ -113,16 +113,20 @@ body.dark-mode .carrinho-icon i {
   width: 100%;
   height: 10%;
   color: white;
-  display: flex
-;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   transition: right 0.3s ease;
   z-index: 1000;
   align-items: center;
-  /* border: var(--bg-color-dark) 3px solid; */
+  border: black 3px solid;;
   backdrop-filter: blur(5px);
 }
+
+body.dark-mode .mobile-nav {
+  border: 3px solid white; /* Define a borda branca no modo escuro */
+}
+
 
 .mobile-nav ul {
   list-style: none;

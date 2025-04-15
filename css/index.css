@@ -19,10 +19,11 @@ body {
 .container {
     width: 100%;
     max-width: 900px;
-    padding: 20px;
+    padding: 10px;
     /* background-color: #fff; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.66);
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.863);
     border-radius: 8px;
+    margin-top: 9rem;
 }
 
 h1 {
@@ -30,6 +31,7 @@ h1 {
     color: black;
     margin-bottom: 1rem;
     padding: 4rem 0rem 0rem 0rem;
+    margin-top: 2rem;
 }
 
 .separator {
@@ -44,7 +46,7 @@ h1 {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 2px solid black;
     font-size: 16px;
 }
 
@@ -113,10 +115,21 @@ h1 {
     margin-bottom: 5px;
 }
 
-.cardapio-item .preco {
+/* .cardapio-item .preco {
     font-size: 1.2em;
     font-weight: bold;
-    color: #27ae60;
+    color: #000000;
+} */
+
+.cardapio-item .preco {
+    font-size: 1em;
+    font-weight: bold;
+    color: #000000; /* Verde padrão */
+}
+
+/* Cor no modo escuro */
+body.dark-mode .cardapio-item .preco {
+    color: #ffffff; /* Verde mais claro para o modo escuro */
 }
 
 /* Ícone do carrinho */
