@@ -23,17 +23,21 @@
     <nav class="mobile-nav" id="mobile-nav">
       <ul>
         <li><a href="index.html">Cardápio</a></li>
+        <div class="separator"> </div>
         <li><a href="carrinho.html">Carrinho</a></li>
       </ul>
     </nav>
   </header>
+  
   <div class="container">
+    
     <h1>Carrinho de Compras</h1>
     <div id="carrinho-itens"></div>
     <div id="total-carrinho">
-      <h3>Total: R$ <span id="total">0,00</span></h3>
+      <h3>Total: <span id="total">0,00</span></h3>
     </div>
     <a href="../html/checkout.html" id="finalizar-pedido" id="checkout-button" class="btn">Finalizar Compra</a>
+    <!-- <button id="zerar-carrinho" class="btn">Zerar Carrinho</button> -->
   </div>
   <script type="module" src="../js/carrinho.js"></script> <!-- Arquivo específico de JavaScript -->
   <script type="module" src="../js/script.js"></script> <!-- Arquivo padrão de JavaScript -->

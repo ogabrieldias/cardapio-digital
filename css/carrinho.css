@@ -43,9 +43,9 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #27ae60;
-    color: white;
-    border: none;
+    border: 2px solid black;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,21 +57,22 @@ body {
 
 .quantidade-btn:hover,
 .remover:hover {
-    background-color: #2ecc71;
+    background-color: black;
+    color: white;
 }
 
 .container {
     width: 100%;
     max-width: 900px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 12);
     border-radius: 8px;
+    margin-top: 8rem;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: white;
 }
 
 #carrinho-itens {
@@ -123,16 +124,20 @@ h1 {
 }
 
 #total-carrinho span {
+    color: var(--text-color-light);
+}
+
+body.dark-mode #total-carrinho span {
     font-weight: bold;
-    color: #27ae60;
+    color: white;
 }
 
 .btn {
     display: block;
     margin-top: 20px;
     padding: 15px 20px;
-    background-color: #27ae60;
-    color: white;
+    border: black 2px solid;
+    color: black;
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
@@ -141,7 +146,27 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #219150;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .btn {
+    display: block;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border: white 2px solid;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+body.dark-mode .btn:hover {
+    background-color: white;
+    color: black;
 }
 
 .menu-icon { 

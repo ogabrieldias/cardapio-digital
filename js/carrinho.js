@@ -90,7 +90,13 @@ function renderizarCarrinho() {
     });
   });
 }
-
+// document.getElementById("zerar-carrinho").addEventListener("click", () => {
+//   if (confirm("Tem certeza de que deseja zerar o carrinho?")) {
+//     localStorage.removeItem("carrinho");
+//     carrinho = [];
+//     renderizarCarrinho();
+//   }
+// });
 // Função para salvar o carrinho no localStorage e atualizar a tela
 function salvarCarrinho() {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));

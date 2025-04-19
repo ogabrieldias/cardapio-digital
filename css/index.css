@@ -34,12 +34,6 @@ h1 {
     margin-top: 2rem;
 }
 
-.separator {
-    width: 2.8px;
-    height: 50px;
-    background-color: black;
-    margin: 0px 0px;
-}
 
 #search {
     width: 100%;
@@ -107,6 +101,10 @@ h1 {
     margin-top: 10px;
     color: black;
     font-size: 18px;
+}
+
+body.dark-mode .cardapio-item h3 {
+    color: white; /* Define a cor branca no modo escuro */
 }
 
 .cardapio-item p {
@@ -203,7 +201,7 @@ body.dark-mode .cardapio-item .preco {
         margin-bottom: 5px;
     }
 
-    .cardapio-item p {
+    /* .cardapio-item p {
         font-size: 12px;
         color: #666;
         margin-bottom: 5px;
@@ -213,5 +211,5 @@ body.dark-mode .cardapio-item .preco {
         font-size: 18px;
         font-weight: bold;
         color: #27ae60;
-    }
+    } */
 }

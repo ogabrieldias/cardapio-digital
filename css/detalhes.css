@@ -37,15 +37,14 @@ background-color: #2ecc71;
   max-width: 900px;
   padding: 20px;
   margin-top: 4.2rem;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 12);
   border-radius: 45px;
   text-align: center;
 }
 
-h1 {
+/* h1 {
 color: #333;
-}
+} */
 
 #produto-detalhes img {
 max-width: 100%;
@@ -59,13 +58,18 @@ margin: 10px 0;
 }
 
 #produto-detalhes p {
-color: #666;
+  color: #000000;
+  font-size: large;
 }
 
 #produto-detalhes .preco {
 font-size: 1.2em;
 font-weight: bold;
-color: #27ae60;
+color: #000000;
+}
+
+body.dark-mode #produto-detalhes .preco {
+  color: #ffffff;
 }
 
 /* Centralização dos botões */
@@ -111,8 +115,19 @@ cursor: pointer;
 transition: var(--bg-color-dark) 0.3s;
 }
 
+body.dark-mode .btn {
+  background-color: transparent; /* Fundo transparente no modo escuro */
+  color: white; /* Texto branco no modo escuro */
+  border: white 2px solid; /* Borda branca no modo escuro */
+}
+
+.btn:active {
+  background-color: white; /* Fundo branco ao clicar */
+  color: black; /* Texto preto ao clicar */
+}
+
 .btn:hover {
-  color: var(--bg-color-white);
+  color: white;
   background-color: var(--bg-color-dark);
   border: var(--bg-color-white) 2px solid;
 
